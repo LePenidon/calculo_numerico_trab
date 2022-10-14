@@ -4,12 +4,12 @@ coluna2 = x(:,2);
 % plot(coluna1, coluna2, "m")
 
 
-function w = pesos(x, sigma)
+function w = pesos(x, c, sigma)
 
   n = size(x)(1);
 
   for i = 1:n
-    t = abs(x - x(i)/sigma;
+    t = abs(x - c)/sigma;
     psi = exp(-(t.^2));
     w = psi;
   endfor
@@ -26,7 +26,7 @@ function a  = mmqp(x, y, w, k)
 end
 
 
-teste = mmqp(coluna1,coluna2,pesos(coluna1, 100),4);
+teste = mmqp(coluna1,coluna2,pesos(coluna1, 100, 4), 3);
 
 f = polyval(teste, coluna1);
 
