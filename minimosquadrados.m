@@ -1,39 +1,18 @@
 x = csvread('SeO4.csv');
 coluna1 = x(:,1);
 coluna2 = x(:,2);
-% plot(coluna1, coluna2, "m")
 
+c = 12.63;
+sigma = 0.06;
+k = 3;
 
-function w = pesos(x, c, sigma)
-  
-  % t = abs(x - c)/sigma;
-  % psi = exp(-(t.^2));
-  % w = psi;
-
-  w = exp(-((abs(x-c)/sigma).^2));
-
-end
-
-function a  = mmqp(x, y, w, k)
-  n = length(x);
-  W = diag(w);
-  X = vander(x);
-  X = X(:, n - k : n);
-
-  a = ((X' * W * X) \ (X' * W * y));
-end
-
-c = 12.66;
-sigma = 0.05;
-k = 2;
-
-aprox = mmqp(coluna1,coluna2,pesos(coluna1, c, sigma), k);
-
-% f = polyval(aprox, coluna1);
-
-n = length(coluna1);
+pesos = exp(-((abs(coluna1-c)/sigma).^2));
+tam_coluna1 = length(coluna1);
+W = diag(pesos);
 X = vander(coluna1);
-X = X(:, n - 2 : n);
+X = X(:, tam_coluna1 - k : tam_coluna1);
+
+aprox = ((X' * W * X) \ (X' * W * coluna2));
 
 f = X*aprox;
 
