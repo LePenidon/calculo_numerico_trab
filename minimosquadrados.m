@@ -5,29 +5,40 @@ coluna2 = x(:,2);
 
 
 function w = pesos(x, c, sigma)
+  
+  % t = abs(x - c)/sigma;
+  % psi = exp(-(t.^2));
+  % w = psi;
 
-  n = size(x)(1);
+  w = exp(-((abs(x-c)/sigma).^2));
 
-  for i = 1:n
-    t = abs(x - c)/sigma;
-    psi = exp(-(t.^2));
-    w = psi;
-  endfor
 end
 
-
 function a  = mmqp(x, y, w, k)
-  n = size(x)(1);
+  n = length(x);
   W = diag(w);
   X = vander(x);
   X = X(:, n - k : n);
 
-  a = ((X' * W * X) \ (X' * W * y))';
+  a = ((X' * W * X) \ (X' * W * y));
 end
 
+c = 12.66;
+sigma = 0.05;
+k = 2;
 
-teste = mmqp(coluna1,coluna2,pesos(coluna1, 100, 4), 3);
+aprox = mmqp(coluna1,coluna2,pesos(coluna1, c, sigma), k);
 
-f = polyval(teste, coluna1);
+% f = polyval(aprox, coluna1);
 
-plot(coluna1, coluna2, "o", coluna1, f, '-')
+n = length(coluna1);
+X = vander(coluna1);
+X = X(:, n - 2 : n);
+
+f = X*aprox;
+
+aprox
+
+hold 
+plot(coluna1, coluna2, "o");
+plot(coluna1, f, '-');
