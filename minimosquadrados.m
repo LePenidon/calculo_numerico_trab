@@ -7,8 +7,8 @@ coluna2 = x(:,2);
 col1_01 = x(1:200,1);
 col2_01 = x(1:200,2);
 
-c = 12.63;
-sigma = 0.01;
+c = col1_01(100)
+sigma = 0.001;
 k = 3;
 
 pesos = exp(-((abs(col1_01-c)/sigma).^2));
@@ -26,8 +26,8 @@ f_1 = X*aprox;
 col1_02 = x(200:250,1);
 col2_02 = x(200:250,2);
 
-c = 12.67;
-sigma = 0.01;
+c = col1_02(25)
+sigma = 0.0001;
 k = 3;
 
 pesos = exp(-((abs(col1_02-c)/sigma).^2));
@@ -44,5 +44,5 @@ f_2 = X*aprox;
 
 hold 
 plot(coluna1, coluna2, "-");
-plot(col1_01, f_1, '-');
-plot(col1_02, f_2, '-');
+plot(col1_01, f_1, '-', 'LineWidth', 3);
+plot(col1_02, f_2, '-', 'LineWidth', 3);
