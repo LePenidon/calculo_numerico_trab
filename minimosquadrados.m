@@ -1,4 +1,6 @@
 format long
+clear; clc; close all
+
 x = csvread('SeO4.csv');
 
 coluna1 = x(:,1);
