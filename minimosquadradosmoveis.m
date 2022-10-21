@@ -1,117 +1,123 @@
+% declaração do formato dos números e para limpar terminal
 format long
 clear; clc; close all
 
+% x recebe os pontos da função a ser aproximada
 x = csvread('SeO4.csv');
 
+% separamos em colunas
 coluna1 = x(:,1);
 coluna2 = x(:,2);
 
+% ordem dos polinomios para a aproximação
 k = 2;
 
-% ===============================================================================
+% ==================PRIMEIRA APROXIMAÇÃO========================================
 
+% dominio da aproximacao
 col1_01 = x(1:140,1);
 col1_01 = col1_01 - 12;
-
 col2_01 = x(1:140,2);
 
+% c: ponto médio
 c_1 = col1_01(70);
+% sigma: ponderação dos pesos em relação ao c
 sigma_1 = 0.1;
 
+% cálculo da aproximação
 pesos = exp(-((abs(col1_01-c_1)/sigma_1).^2));
 tam_coluna1 = length(col1_01);
 W = diag(pesos);
 X = vander(col1_01);
 X = X(:, tam_coluna1 - k : tam_coluna1);
-
 aprox = ((X' * W * X) \ (X' * W * col2_01));
-
 f_1 = X*aprox;
 
-% ===============================================================================
+% ==================SEGUNDA APROXIMAÇÃO========================================
 
+% dominio da aproximacao
 col1_02 = x(141:230,1);
 col1_02 = col1_02 - 12;
-
-
 col2_02 = x(141:230,2);
 
+% c: ponto médio
 c_2 = col1_02(40);
+% sigma: ponderação dos pesos em relação ao c
 sigma_2 = 0.1;
 
+% cálculo da aproximação
 pesos = exp(-((abs(col1_02-c_2)/sigma_2).^2));
 tam_coluna1 = length(col1_02);
 W = diag(pesos);
 X = vander(col1_02);
 X = X(:, tam_coluna1 - k : tam_coluna1);
-
 aprox = ((X' * W * X) \ (X' * W * col2_02));
-
 f_2 = X*aprox;
 
-% ===============================================================================
+% ==================TERCEIRA APROXIMAÇÃO========================================
 
+% dominio da aproximacao
 col1_03 = x(231:290,1);
 col1_03 = col1_03 - 12;
-
 col2_03 = x(231:290,2);
 
+% c: ponto médio
 c_3 = col1_03(60);
+% sigma: ponderação dos pesos em relação ao c
 sigma_3 = 0.1;
 
+% cálculo da aproximação
 pesos = exp(-((abs(col1_03-c_3)/sigma_3).^2));
 tam_coluna1 = length(col1_03);
 W = diag(pesos);
 X = vander(col1_03);
 X = X(:, tam_coluna1 - k : tam_coluna1);
-
 aprox = ((X' * W * X) \ (X' * W * col2_03));
-
 f_3 = X*aprox;
 
-% ===============================================================================
+% ==================QUARTA APROXIMAÇÃO========================================
 
+% dominio da aproximacao
 col1_04 = x(290:330,1);
 col1_04 = col1_04 - 12;
-
-
 col2_04 = x(290:330,2);
 
+% c: ponto médio
 c_4 = col1_04(20);
+% sigma: ponderação dos pesos em relação ao c
 sigma_4 = 0.1;
 
+% cálculo da aproximação
 pesos = exp(-((abs(col1_04-c_4)/sigma_4).^2));
 tam_coluna1 = length(col1_04);
 W = diag(pesos);
 X = vander(col1_04);
 X = X(:, tam_coluna1 - k : tam_coluna1);
-
 aprox = ((X' * W * X) \ (X' * W * col2_04));
-
 f_4 = X*aprox;
 
-% ==============================================================================
+% ==================QUINTA APROXIMAÇÃO========================================
 
+% dominio da aproximacao
 col1_05 = x(330:450,1);
 col1_05 = col1_05 - 12;
-
-
 col2_05 = x(330:450,2);
 
+% c: ponto médio
 c_5 = col1_05(60);
+% sigma: ponderação dos pesos em relação ao c
 sigma_5 = 0.1;
 
+% cálculo da aproximação
 pesos = exp(-((abs(col1_05-c_5)/sigma_4).^2));
 tam_coluna1 = length(col1_05);
 W = diag(pesos);
 X = vander(col1_05);
 X = X(:, tam_coluna1 - k : tam_coluna1);
-
 aprox = ((X' * W * X) \ (X' * W * col2_05));
-
 f_5 = X*aprox;
 
-% ==============================================================================
+% ==================PLOTAR GRÁFICO========================================
 
 hold on
 plot(coluna1, coluna2, 'DisplayName','Se04', 'LineWidth', 2);
@@ -134,4 +140,4 @@ hold off
 
 lgd = legend;
 
-hold off
+% =========================================================================
