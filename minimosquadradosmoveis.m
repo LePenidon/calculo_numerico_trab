@@ -10,7 +10,7 @@ coluna1 = x(:,1);
 coluna2 = x(:,2);
 
 % ordem dos polinomios para a aproximação
-k = 2;
+k = 3;
 
 % ==================PRIMEIRA APROXIMAÇÃO========================================
 
@@ -22,7 +22,7 @@ col2_01 = x(1:140,2);
 % c: ponto médio
 c_1 = col1_01(70);
 % sigma: ponderação dos pesos em relação ao c
-sigma_1 = 0.1;
+sigma_1 = 0.001;
 
 % cálculo da aproximação
 pesos = exp(-((abs(col1_01-c_1)/sigma_1).^2));
@@ -43,7 +43,7 @@ col2_02 = x(141:230,2);
 % c: ponto médio
 c_2 = col1_02(40);
 % sigma: ponderação dos pesos em relação ao c
-sigma_2 = 0.1;
+sigma_2 = 0.001;
 
 % cálculo da aproximação
 pesos = exp(-((abs(col1_02-c_2)/sigma_2).^2));
@@ -64,7 +64,7 @@ col2_03 = x(231:290,2);
 % c: ponto médio
 c_3 = col1_03(60);
 % sigma: ponderação dos pesos em relação ao c
-sigma_3 = 0.1;
+sigma_3 = 0.001;
 
 % cálculo da aproximação
 pesos = exp(-((abs(col1_03-c_3)/sigma_3).^2));
@@ -85,7 +85,7 @@ col2_04 = x(290:330,2);
 % c: ponto médio
 c_4 = col1_04(20);
 % sigma: ponderação dos pesos em relação ao c
-sigma_4 = 0.1;
+sigma_4 = 0.001;
 
 % cálculo da aproximação
 pesos = exp(-((abs(col1_04-c_4)/sigma_4).^2));
@@ -106,7 +106,7 @@ col2_05 = x(330:450,2);
 % c: ponto médio
 c_5 = col1_05(60);
 % sigma: ponderação dos pesos em relação ao c
-sigma_5 = 0.1;
+sigma_5 = 0.001;
 
 % cálculo da aproximação
 pesos = exp(-((abs(col1_05-c_5)/sigma_4).^2));
