@@ -8,18 +8,18 @@ clear; clc; close all
 N = 1000;
 
 % ========================================================================================
-P = [135 -170; 90 -50; 35 -155]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [135 -170; 90 -50; 35 -155]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -28,24 +28,24 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % ========================================================================================
 
-P = [35 -155; -25 -125 ; 11 -125]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [35 -155; -25 -125 ; 11 -125]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -54,23 +54,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [11 -125; -10 -110 ; 10 -109]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [11 -125; -10 -110 ; 10 -109]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -79,23 +79,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [10 -109; -24 -80 ; 16 -90]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [10 -109; -24 -80 ; 16 -90]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -104,23 +104,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [16 -90; -20 -40 ; 70 -40]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [16 -90; -20 -40 ; 70 -40]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -129,23 +129,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [70 -40; 50 30 ; 120 -26]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [70 -40; 50 30 ; 120 -26]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -154,23 +154,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [120 -26; 190 10; 315 -60]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [120 -26; 190 10; 315 -60]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -179,23 +179,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [315 -60; 500 -50; 485 -130]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [315 -60; 500 -50; 485 -130]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -204,23 +204,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [485 -130; 490 -165; 459 -172]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [485 -130; 490 -165; 459 -172]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -229,23 +229,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [459 -172; 415 -65; 375 -174]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [459 -172; 415 -65; 375 -174]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -254,23 +254,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [375 -174; 135 -170]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [375 -174; 135 -170]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -279,23 +279,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [60 -151; 90 -98; 107 -150]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [60 -151; 70 -108; 100 -108; 107 -150]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -304,23 +304,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [60 -151; 90 -208; 107 -150]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [60 -151; 70 -198; 100 -198; 107 -150]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -329,23 +329,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [395 -168; 419 -108; 438 -166]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [395 -168; 402 -126; 435 -126; 438 -166]; 
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -354,23 +354,23 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
 % =========================================================================================
-P = [395 -168; 419 -208; 438 -166]; 
-Np = size(P, 1);
-u = linspace(0, 1, N);
-B = zeros(N, Np);
+pontos = [395 -168; 402 -207; 435 -207; 438 -166];
+num_pontos = size(pontos, 1);
+t = linspace(0, 1, N);
+B = zeros(N, num_pontos);
 
-for i = 1:Np
-    B(:,i) = nchoosek(Np-1,i-1).*u.^(i-1).*(1-u).^(Np-i); 
+for i = 1:num_pontos
+    B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
-S = B*P;
-x = S(:, 1);
-y = S(:, 2);
+C = B*pontos;
+x = C(:, 1);
+y = C(:, 2);
 
 hold
 xlim([-50 500])  
@@ -379,7 +379,7 @@ ylim([-200 100])
 plot(x, y, 'LineWidth', 4); 
 set(gca, 'FontSize', 16)
 
-plot(x, y, P(:, 1), P(:, 2), 'x-', 'LineWidth', 1); 
+plot(x, y, pontos(:, 1), pontos(:, 2), 'x-', 'LineWidth', 1); 
 set(gca, 'FontSize', 16)
 hold off
 
