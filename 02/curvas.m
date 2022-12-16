@@ -2,22 +2,30 @@
 format long
 clear; clc; close all
 
+% constante da curva de Bezier
 N = 1000;
 
 % ========================================================================================
+% pontos de controle
 pontos = [135 -170; 90 -50; 35 -155]; 
+% numero de pontos
 num_pontos = size(pontos, 1);
+% linearizacao do espaco
 t = linspace(0, 1, N);
+% matriz de Bezier
 B = zeros(N, num_pontos);
 
+% calculo das polinomios
 for i = 1:num_pontos
     B(:,i) = nchoosek(num_pontos-1,i-1).*t.^(i-1).*(1-t).^(num_pontos-i); 
 end
 
+% calculo das curvas
 C = B*pontos;
 x = C(:, 1);
 y = C(:, 2);
 
+% plot do grafico
 hold
 xlim([-50 500])  
 ylim([-200 100])
